@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>USA population simulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src = "main.js"></script>
+</head>
+
+<body>
+    <!--
+    <label for="birthrate">Input Birthrate here(from 0-1):</label>
+    <input type="text" id="birthrate" name="birthrate">
+
+    <br>
+    <br>
+
+    <label for="deathrate">Input Deathrate here(from 0-1)</label>
+    <input type="text" id="deathrate" name="deathrate">
+
+    <br>
+    <br>
+-->
+    <label for="inital-popluation">Input Inital Popluation here:</label>
+    <input type="number" 
+    id="inital-popluation" 
+    name="inital-popluation"
+    min="1"
+    onkeydown = "return event.key >= 0 && event.key <= 9 || event.key === 'Backspace';">
+
+    <br>
+    <br>
+<!--
+    <label for="net-migration-rate">Input Net Migration Rate here(from 0-1):</label>
+    <input type="text" id="net-migration-rate" name="net-migration-rate">
+-->
+    <button onclick="nextPage()">Next Page</button>
+</body>
+
+</html>
