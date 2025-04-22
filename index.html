@@ -31,6 +31,16 @@
 
     <br>
     <br>
+
+    <label for="target-year">Simulate Until Year:</label>
+    <input type="number" 
+    id="target-year" 
+    name="target-year" 
+    min="2024"
+    onkeydown="return event.key >= 0 && event.key <= 9 || event.key === 'Backspace';">
+
+    <br>
+    <br>
 <!--
     <label for="net-migration-rate">Input Net Migration Rate here(from 0-1):</label>
     <input type="text" id="net-migration-rate" name="net-migration-rate">

@@ -7,11 +7,12 @@
 const nextPage = () => {
 
   let initalPopluation = document.getElementById("inital-popluation").value
+  let targetYear = document.getElementById("target-year").value;
 
   if (!initalPopluation) {
     return;
   } else {
-
+    localStorage.setItem("targetYear", targetYear);
     window.location.href = "simulator.html";
   }
 };
@@ -66,7 +67,7 @@ d3.json("canadaprovtopo.json").then(topology => {
 
     // literally just years 
     let year = 0;
-
+    const targetYear = Number(localStorage.getItem("targetYear")); // the ending year that the user will put, and when the sim will stop :)
 
     // decalringing fucntion generateOneDotPerCity
     const generateOneDotPerCity = () => {
@@ -122,6 +123,8 @@ d3.json("canadaprovtopo.json").then(topology => {
 
 // i think this one is self explantory, questions text me at @shaivi123 insta babes
     const updatePopulation = () => {
+      if (year > targetYear) return; // just stops the sim when year is reached
+
       data.forEach(d => {
         const births = d.Population * d.BirthRate;
         const deaths = d.Population * d.DeathRate;
@@ -132,6 +135,7 @@ d3.json("canadaprovtopo.json").then(topology => {
       // takes data needed for generating dats: generateOneDotPerCity() and makes dots :  drawGrowingDots()
       drawGrowingDots(generateOneDotPerCity());
 
+      document.getElementById("year-display").innerText = `Year: ${year}`; // just displays what year we are on 
       // doesnt have a purpose yet, might later?
       year++;
     };
