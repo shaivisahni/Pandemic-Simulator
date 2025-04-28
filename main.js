@@ -2,6 +2,7 @@
 //document.getElementById("deathrate")
 //document.getElementById("net-migration-rate")
 
+// new version i lie my guy
 // split inital popluation by how it is currently split then apply death+birth+micatrion rates
 
 const nextPage = () => {
